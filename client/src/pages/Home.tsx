@@ -297,7 +297,7 @@ export default function Home() {
               <span className="text-[hsl(var(--primary-red))] font-bold uppercase tracking-wider">Our Activities & Celebrations</span>
               <h2 className="text-4xl md:text-5xl font-display font-bold mt-2">Learning Through Play</h2>
             </div>
-            <Link href="/activities">
+            <Link href="/gallery">
               <Button variant="ghost" className="text-[hsl(var(--primary-blue))] font-bold hover:bg-[hsl(var(--primary-blue))/10] mt-4 md:mt-0">
                 View Full Gallery <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
