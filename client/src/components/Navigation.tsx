@@ -12,7 +12,6 @@ export function Navigation() {
   const links = [
     { href: "/", label: "Home", color: "hover:text-[hsl(var(--primary-red))]" },
     { href: "/about", label: "About Us", color: "hover:text-[hsl(var(--primary-blue))]" },
-    { href: "/activities", label: "Activities", color: "hover:text-[hsl(var(--primary-green))]" },
     { href: "/admissions", label: "Admissions", color: "hover:text-[hsl(var(--primary-yellow))]" },
     { href: "/gallery", label: "Gallery", color: "hover:text-[hsl(var(--primary-red))]" },
     { href: "/contact", label: "Contact", color: "hover:text-[hsl(var(--primary-blue))]" },
@@ -24,9 +23,14 @@ export function Navigation() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-            <div className="bg-[hsl(var(--primary-red))] p-2 rounded-full transform group-hover:rotate-12 transition-transform">
-              <Star className="w-8 h-8 text-white fill-current" />
-            </div>
+            
+    <img
+  src="/logo.png"
+  alt="Active Kids Logo"
+  className="h-24 w-24 md:h-32 md:w-32 object-contain mx-auto"
+/>
+
+            
             <div className="flex flex-col">
               <span className="font-display text-2xl font-bold text-foreground leading-none">
                 Active Kids

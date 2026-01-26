@@ -11,25 +11,19 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex flex-col">
               <span className="font-display text-3xl font-bold text-[hsl(var(--primary-red))]">
-                Active Kids
+                Active Kids Play School
               </span>
-              <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
-                Play School
-              </span>
+            
             </div>
             <p className="text-gray-600 leading-relaxed">
               Nurturing young minds with love, care, and creative learning. Where every day is an adventure!
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-[hsl(var(--primary-blue))/10] p-2 rounded-full text-[hsl(var(--primary-blue))] hover:bg-[hsl(var(--primary-blue))] hover:text-white transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="bg-[hsl(var(--primary-red))/10] p-2 rounded-full text-[hsl(var(--primary-red))] hover:bg-[hsl(var(--primary-red))] hover:text-white transition-colors">
+             
+              <a href="https://www.instagram.com/active_kids_play_school?igsh=MTNhamFpNm5kOXl4aQ%3D%3D" target="_blank" className="bg-[hsl(var(--primary-red))/10] p-2 rounded-full text-[hsl(var(--primary-red))] hover:bg-[hsl(var(--primary-red))] hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-[hsl(var(--primary-green))/10] p-2 rounded-full text-[hsl(var(--primary-green))] hover:bg-[hsl(var(--primary-green))] hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
+             
             </div>
           </div>
 
@@ -40,7 +34,6 @@ export function Footer() {
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Admissions", href: "/admissions" },
-                { label: "Activities", href: "/activities" },
                 { label: "Gallery", href: "/gallery" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
@@ -59,15 +52,19 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-gray-600">
                 <MapPin className="w-5 h-5 text-[hsl(var(--primary-red))] shrink-0 mt-1" />
-                <span>123 Sunshine Lane, Happy Valley, City, State - 123456</span>
+                <span>Jyoti Nagar Road,Shahdara, Delhi, 110093</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-600">
                 <Phone className="w-5 h-5 text-[hsl(var(--primary-green))] shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 97115 29616</span>
+              </li><li className="flex items-center space-x-3 text-gray-600">
+                <Phone className="w-5 h-5 text-[hsl(var(--primary-green))] shrink-0" />
+                 <span>+91 98111 68383</span>
               </li>
+              
               <li className="flex items-center space-x-3 text-gray-600">
                 <Mail className="w-5 h-5 text-[hsl(var(--primary-blue))] shrink-0" />
-                <span>hello@activekids.com</span>
+                <span>tg798283@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -78,7 +75,7 @@ export function Footer() {
             <div className="bg-gray-200 rounded-xl h-40 w-full flex items-center justify-center text-gray-400 overflow-hidden">
               {/* map placeholder */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.182478546187!2d77.0697!3d28.5042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDMwJzE1LjEiTiA3N8KwMDQnMTAuOSJF!5e0!3m2!1sen!2sin!4v1625641234567!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d874.981532220483!2d77.29388219838498!3d28.69185628347829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDQxJzMwLjciTiA3N8KwMTcnMzguMCJF!5e0!3m2!1sen!2sin!4v1769072875094!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -91,8 +88,19 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-100 mt-12 pt-8 text-center text-gray-500 font-medium">
-          <p>© {new Date().getFullYear()} Active Kids Play School. All rights reserved.</p>
-        </div>
+  <p>
+    © {new Date().getFullYear()} Active Kids Play School. All rights reserved. | Developed by :{" "}
+    <a
+      href="https://jatin-portfolio-2005.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[hsl(var(--primary-blue))] font-semibold hover:underline"
+    >
+      Jatin Kumar
+    </a>
+  </p>
+</div>
+
       </div>
     </footer>
   );

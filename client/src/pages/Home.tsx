@@ -1,9 +1,69 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Star, Heart, Smile, Sun } from "lucide-react";
+import {
+  ArrowRight,
+  Star,
+  Heart,
+  Smile,
+  Sun,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
+   const testimonials = [
+    {
+      text: "My child has become more confident and happy since joining Active Kids. The teachers are incredibly caring.",
+      parent: "Priya Sharma",
+      student: "Aarav (Nursery)",
+    },
+    {
+      text: "The school environment feels like a second home. We truly appreciate the personal attention given to each child.",
+      parent: "Rahul Mehta",
+      student: "Anaya (LKG)",
+    },
+    {
+      text: "Amazing activities and learning methods! My son learns while having fun every single day.",
+      parent: "Sneha Verma",
+      student: "Kabir (UKG)",
+    },
+    {
+      text: "Safety and hygiene are top notch. We feel completely relaxed sending our daughter here.",
+      parent: "Neha Gupta",
+      student: "Myra (Playgroup)",
+    },
+    {
+      text: "We’ve seen huge improvement in communication and confidence. Truly the best preschool experience.",
+      parent: "Amit Singh",
+      student: "Vihaan (Nursery)",
+    },
+    {
+      text: "Perfect balance of learning and fun. Highly recommended to every parent!",
+      parent: "Ritika Kapoor",
+      student: "Ishaan (UKG)",
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const next = () =>
+    setIndex((prev) => (prev + 1) % testimonials.length);
+
+  const prev = () =>
+    setIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -24,7 +84,7 @@ export default function Home() {
                 <span className="text-[hsl(var(--primary-red))] font-bold tracking-wide text-sm">Welcome to Active Kids</span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-display font-bold text-foreground leading-tight mb-6">
-                Where Learning Meets <span className="text-[hsl(var(--primary-blue))]">Fun</span> & <span className="text-[hsl(var(--primary-green))]">Growth</span>
+                Where Learning Meets with<br></br> <span className="text-[hsl(var(--primary-blue))]">Fun</span> & <span className="text-[hsl(var(--primary-green))]">Growth</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 A colorful world of discovery for your little ones. We provide a safe, nurturing environment where every child can bloom.
@@ -60,7 +120,7 @@ export default function Home() {
                   />
                   {/* drawing class */}
                   <img 
-                    src="https://pixabay.com/get/g2bbcb1e2d92abc7dcc8e9587518a21737064986e40c4f821ebe5457a67bf9d7ecb2af306ff24562801d993fa9b0d8c5f0bc7bc522f0757f7b41e48292dd85d8d_1280.jpg" 
+                    src="https://i.ibb.co/k6yTD7Sm/kids-2985782-1280.jpg" 
                     alt="Art class"
                     className="rounded-2xl shadow-xl w-full h-64 object-cover transform rotate-2 hover:rotate-0 transition-transform duration-300" 
                   />
@@ -84,6 +144,105 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* About / Why Active Kids Section */}
+<section className="py-16 md:py-24 bg-white relative overflow-hidden">
+
+  {/* soft blobs */}
+  <div className="absolute -top-32 -left-32 w-80 h-80 md:w-96 md:h-96 bg-[hsl(var(--primary-yellow))/20] rounded-full blur-3xl" />
+  <div className="absolute -bottom-32 -right-32 w-80 h-80 md:w-96 md:h-96 bg-[hsl(var(--primary-blue))/20] rounded-full blur-3xl" />
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    {/* better responsive grid */}
+    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+      {/* LEFT CONTENT */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center lg:text-left"
+      >
+        <span className="text-[hsl(var(--primary-red))] font-bold uppercase tracking-wider text-sm">
+          About Active Kids
+        </span>
+
+        {/* responsive heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-3 mb-5 leading-tight">
+          A Happy Place Where{" "}
+          <span className="text-[hsl(var(--primary-green))]">
+            Kids Learn, Play & Grow
+          </span>
+        </h2>
+
+        <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          We create a joyful and safe space where children explore, imagine,
+          and build confidence every day through play-based learning and
+          loving teachers.
+        </p>
+
+        {/* Features → card style (better UI than plain list) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+          {[
+            "Safe & Caring Environment",
+            "Smart Classrooms",
+            "Play-Based Learning",
+            "Qualified Loving Teachers",
+            "Life Skills Focus",
+            "Parent Involvement",
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-3 bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-xl transition"
+            >
+              <div className="w-6 h-6 rounded-full bg-[hsl(var(--primary-green))] text-white text-xs flex items-center justify-center">
+                ✓
+              </div>
+              <span className="text-sm font-medium">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <Link href="/about">
+          <Button className="rounded-full px-8 h-12 shadow-md hover:shadow-lg bg-[hsl(var(--primary-blue))] hover:bg-[hsl(var(--primary-blue))/90]">
+            Learn More About Us
+          </Button>
+        </Link>
+      </motion.div>
+
+      {/* RIGHT IMAGE */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="relative flex justify-center lg:justify-end mt-8 lg:mt-0"
+      >
+        {/* controlled responsive size */}
+        <img
+          src="/school.png"
+          alt="Kids learning"
+          className="
+            rounded-3xl shadow-2xl
+            w-[80%] sm:w-[70%] md:w-[60%] lg:w-[90%]
+            max-w-sm md:max-w-md lg:max-w-lg
+            object-cover
+            hover:scale-105 transition-transform duration-300
+          "
+        />
+
+        {/* floating badge */}
+        <div className="absolute bottom-2 left-6 md:-bottom-5 md:-left-5 bg-white shadow-lg rounded-xl px-4 py-2 text-sm font-semibold">
+          🎉 500+ Happy Kids
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Why Choose Us */}
       <section className="py-24 bg-white">
@@ -135,22 +294,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-              <span className="text-[hsl(var(--primary-red))] font-bold uppercase tracking-wider">Our Activities</span>
+              <span className="text-[hsl(var(--primary-red))] font-bold uppercase tracking-wider">Our Activities & Celebrations</span>
               <h2 className="text-4xl md:text-5xl font-display font-bold mt-2">Learning Through Play</h2>
             </div>
             <Link href="/activities">
               <Button variant="ghost" className="text-[hsl(var(--primary-blue))] font-bold hover:bg-[hsl(var(--primary-blue))/10] mt-4 md:mt-0">
-                View All Activities <ArrowRight className="ml-2 w-4 h-4" />
+                View Full Gallery <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Music & Dance", img: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=600&h=600&fit=crop" },
-              { title: "Art & Craft", img: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&h=600&fit=crop" },
-              { title: "Story Time", img: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?w=600&h=600&fit=crop" },
-              { title: "Outdoor Sports", img: "https://images.unsplash.com/photo-1610817928734-e4c34a974b7c?w=600&h=600&fit=crop" },
+              { title: "Music & Dance", img: "https://res.cloudinary.com/ddvmdrxaz/image/upload/v1769228952/activeschool/IMG-20260122-WA0030_tbd6as.jpg" },
+              { title: "Art & Craft", img: "https://res.cloudinary.com/ddvmdrxaz/image/upload/v1769228945/activeschool/IMG-20260122-WA0034_rpofns.jpg" },
+              { title: "Republic Day", img: "https://res.cloudinary.com/ddvmdrxaz/image/upload/v1769228943/activeschool/IMG-20260122-WA0026_df1v5b.jpg" },
+              { title: "Janmashtami", img: "https://res.cloudinary.com/ddvmdrxaz/image/upload/v1769228944/activeschool/IMG-20260122-WA0029_eyg8cy.jpg" },
             ].map((item, i) => (
               <div key={i} className="group relative overflow-hidden rounded-3xl aspect-[4/5] cursor-pointer">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10" />
@@ -167,6 +326,119 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="py-16 md:py-24 bg-[hsl(var(--primary-yellow))/5] relative overflow-hidden">
+
+  {/* soft background blobs */}
+  <div className="absolute -top-24 -left-24 w-72 h-72 bg-[hsl(var(--primary-blue))/15] rounded-full blur-3xl" />
+  <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-[hsl(var(--primary-red))/15] rounded-full blur-3xl" />
+
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+
+    {/* Heading */}
+    <div className="mb-12 md:mb-16">
+      <span className="text-[hsl(var(--primary-blue))] font-bold uppercase tracking-wider text-sm">
+        What Our Parents Say
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-2">
+        Loved by Families ❤️
+      </h2>
+    </div>
+
+
+    {/* Slider wrapper */}
+    <div className="relative flex items-center justify-center">
+
+      {/* Left arrow */}
+      <button
+        onClick={prev}
+        className="
+          hidden sm:flex
+          absolute -left-4 md:-left-10
+          bg-white shadow-lg p-3 rounded-full
+          hover:scale-110 transition
+        "
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+
+
+      {/* Card */}
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="
+          bg-white
+          rounded-3xl
+          p-6 sm:p-10 md:p-14
+          shadow-xl
+          border border-gray-100
+          w-full
+          max-w-xl md:max-w-2xl
+          min-h-[260px] md:min-h-[300px]
+          flex flex-col justify-between
+        "
+      >
+        {/* stars */}
+        <div className="flex justify-center mb-4 text-yellow-400">
+          {Array(5)
+            .fill(0)
+            .map((_, i) => (
+              <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400" />
+            ))}
+        </div>
+
+        {/* text */}
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground italic leading-relaxed mb-6">
+          “{testimonials[index].text}”
+        </p>
+
+        {/* parent info */}
+        <div>
+          <h4 className="font-bold text-md md:text-lg">
+            {testimonials[index].parent}
+          </h4>
+          <p className="text-xs md:text-sm text-muted-foreground">
+            Parent of {testimonials[index].student}
+          </p>
+        </div>
+      </motion.div>
+
+
+      {/* Right arrow */}
+      <button
+        onClick={next}
+        className="
+          hidden sm:flex
+          absolute -right-4 md:-right-10
+          bg-white shadow-lg p-3 rounded-full
+          hover:scale-110 transition
+        "
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+    </div>
+
+
+    {/* Mobile dots indicator */}
+    <div className="flex justify-center gap-2 mt-6 sm:hidden">
+      {testimonials.map((_, i) => (
+        <div
+          key={i}
+          className={`h-2 w-2 rounded-full ${
+            i === index
+              ? "bg-[hsl(var(--primary-blue))]"
+              : "bg-gray-300"
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
       {/* CTA Section */}
       <section className="py-24 bg-white relative overflow-hidden">
@@ -187,6 +459,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      
     </div>
   );
 }
