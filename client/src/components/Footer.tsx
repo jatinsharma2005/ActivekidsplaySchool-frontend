@@ -71,20 +71,29 @@ export function Footer() {
 
           {/* Newsletter / Map placeholder */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-foreground">Visit Us</h3>
-            <div className="bg-gray-200 rounded-xl h-40 w-full flex items-center justify-center text-gray-400 overflow-hidden">
-              {/* map placeholder */}
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d874.981532220483!2d77.29388219838498!3d28.69185628347829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDQxJzMwLjciTiA3N8KwMTcnMzguMCJF!5e0!3m2!1sen!2sin!4v1769072875094!5m2!1sen!2sin" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy"
-                title="School Location"
-              />
-            </div>
-          </div>
+  <h3 className="text-xl font-bold mb-6 text-foreground">
+    Visit Us
+  </h3>
+
+  <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200">
+
+    {/* responsive map container */}
+    <div className="relative w-full aspect-[16/10]">
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d874.981532220483!2d77.29388219838498!3d28.69185628347829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDQxJzMwLjciTiA3N8KwMTcnMzguMCJF!5e0!3m2!1sen!2sin!4v1769072875094!5m2!1sen!2sin"
+        className="absolute inset-0 w-full h-full"
+        style={{ border: 0 }}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+        title="Active Kids Play School Location"
+      />
+
+    </div>
+  </div>
+</div>
+
         </div>
 
         <div className="border-t border-gray-100 mt-12 pt-8 text-center text-gray-500 font-medium">
