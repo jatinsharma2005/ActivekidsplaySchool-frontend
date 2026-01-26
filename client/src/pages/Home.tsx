@@ -235,7 +235,7 @@ export default function Home() {
 
         {/* floating badge */}
         <div className="absolute bottom-2 left-6 md:-bottom-5 md:-left-5 bg-white shadow-lg rounded-xl px-4 py-2 text-sm font-semibold">
-          🎉 500+ Happy Kids
+          🎉 50+ Happy Kids
         </div>
       </motion.div>
 
