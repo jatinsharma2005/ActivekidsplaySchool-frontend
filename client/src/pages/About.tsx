@@ -37,9 +37,7 @@ export default function About() {
 
 
               {/* floating badge */}
-              <div className="absolute -bottom-5 -right-5 bg-white rounded-xl shadow-lg px-4 py-2 text-sm font-semibold">
-                🎉 10+ Years of Excellence
-              </div>
+             
             </motion.div>
 
             {/* Content */}
