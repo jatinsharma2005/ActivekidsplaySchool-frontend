@@ -16,34 +16,30 @@ export default function Home() {
    const testimonials = [
     {
       text: "My child has become more confident and happy since joining Active Kids. The teachers are incredibly caring.",
-      parent: "Priya Sharma",
-      student: "Aarav (Nursery)",
+      parent: "Richa & Aashish",
+      student: "Ishanvi (KG)",
     },
     {
       text: "The school environment feels like a second home. We truly appreciate the personal attention given to each child.",
-      parent: "Rahul Mehta",
-      student: "Anaya (LKG)",
+      parent: "Gopal & Deepa",
+      student: "Ankush (KG)",
     },
     {
       text: "Amazing activities and learning methods! My son learns while having fun every single day.",
-      parent: "Sneha Verma",
-      student: "Kabir (UKG)",
+      parent: "Kamal Kumar & Sonam Rastogi",
+      student: "Ananya (nursery)",
     },
     {
       text: "Safety and hygiene are top notch. We feel completely relaxed sending our daughter here.",
-      parent: "Neha Gupta",
-      student: "Myra (Playgroup)",
+      parent: "Ashu Jain & Preeti Jain",
+      student: "Aarav jain (play group)",
     },
     {
       text: "We’ve seen huge improvement in communication and confidence. Truly the best preschool experience.",
-      parent: "Amit Singh",
-      student: "Vihaan (Nursery)",
+      parent: "Vikash & Chanchal",
+      student: "Avyukt Dixit (Pre nursery)",
     },
-    {
-      text: "Perfect balance of learning and fun. Highly recommended to every parent!",
-      parent: "Ritika Kapoor",
-      student: "Ishaan (UKG)",
-    },
+    
   ];
 
   const [index, setIndex] = useState(0);

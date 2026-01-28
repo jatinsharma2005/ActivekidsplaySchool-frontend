@@ -40,6 +40,10 @@ export default function About() {
              
             </motion.div>
 
+
+
+
+
             {/* Content */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -77,6 +81,84 @@ export default function About() {
           </div>
         </div>
       </section>
+
+
+
+{/* ================================= */}
+{/* FEATURED FOUNDERS (HIGHLIGHT SECTION) */}
+{/* ================================= */}
+<section className="relative py-20 md:py-28 overflow-hidden">
+
+  {/* soft gradient background */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary-yellow))/15] via-white to-[hsl(var(--primary-blue))/10]" />
+
+  {/* decorative blobs */}
+  <div className="absolute -top-20 -left-20 w-72 h-72 bg-[hsl(var(--primary-yellow))/20] rounded-full blur-3xl" />
+  <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-[hsl(var(--primary-blue))/20] rounded-full blur-3xl" />
+
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* CARD CONTAINER (makes it pop) */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="bg-white/90 backdrop-blur rounded-[2.5rem] shadow-2xl p-8 md:p-14"
+    >
+
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        {/* LEFT CONTENT */}
+        <div className="text-center lg:text-left">
+
+          <span className="inline-block px-4 py-1 mb-5 text-xl font-semibold rounded-full bg-[hsl(var(--primary-blue))/10] text-red-600">
+            Our Founder's
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
+            Meet The Hearts <br className="hidden md:block" />
+            Behind Active Kids
+          </h2>
+
+          <h3 className="text-xl font-semibold text-[hsl(var(--primary-blue))] mb-6">
+            Bhawna Gupta & Renu Sharma
+          </h3>
+
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Active Kids Play School was created with one beautiful dream —
+            to give every child a joyful, safe and loving place to grow.
+            Their passion and dedication shape everything we do each day.
+          </p>
+
+          <div className="flex gap-4 items-start justify-center lg:justify-start">
+            <Quote className="w-8 h-8 text-[hsl(var(--primary-yellow))] mt-1" />
+            <p className="italic text-muted-foreground">
+              “Every child deserves care, confidence and the freedom to explore.
+              We nurture not just students, but little dreams.”
+            </p>
+          </div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="flex justify-center relative">
+
+          {/* soft background card effect */}
+          <div className="absolute inset-0 scale-105 rounded-3xl bg-[hsl(var(--primary-blue))/10] blur-2xl" />
+
+          <img
+            src="/founders.jpeg"
+            alt="Founders of Active Kids Play School"
+            className="relative rounded-3xl shadow-2xl w-[95%] md:w-full max-w-lg object-cover border-4 border-white"
+          />
+        </div>
+
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
 
 
       {/* ================================= */}
