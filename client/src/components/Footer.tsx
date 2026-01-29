@@ -70,7 +70,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[hsl(var(--primary-red))] mt-1" />
                 <span>
-                  Jyoti Nagar Road, Shahdara <br />
+                  F-32,Jyoti Nagar Road,Jyoti Nagar, Shahdara <br />
                   Delhi – 110093
                 </span>
               </li>

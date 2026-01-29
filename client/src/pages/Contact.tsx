@@ -72,7 +72,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Our Campus</h3>
                   <p className="text-muted-foreground text-lg">
-                    Jyoti Nagar Road,Shahdara, Delhi, 110093
+                   F-32,Jyoti Nagar Road,Jyoti Nagar, Shahdara, Delhi, 110093
                     
                   </p>
                 </div>
