@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://activekidsplayschool.com/sitemap.xml
